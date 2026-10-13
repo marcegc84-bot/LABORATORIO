@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: stressedout
+spec:
+  selector:
+    app: stressed
+  ports:
+  - port: 80
+    targetPort: 80
