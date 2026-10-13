@@ -1,0 +1,10 @@
+kubectl run -i --tty load-generator --rm --image=busybox -- sh
+
+while true; do
+  wget -q -O- http://stressedout
+done
+
+
+kubectl get hpa -w
+
+kubectl get pods -w
