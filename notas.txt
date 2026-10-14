@@ -16,5 +16,17 @@ minikube addons list | grep metrics
 minikube kubectl -- get pods -n kube-system
 kubectl get pods -n kube-system | grep metrics
 
+kubectl run -it load-generator --rm --image=busybox -- sh
+while true; do wget -q -O- http://stressedout; done
+
+kubectl get hpa -w
+kubectl get pods -w
+
+watch kubectl top pods
+
+kubectl describe hpa stressedout-hpa
+
+
+
 
 
