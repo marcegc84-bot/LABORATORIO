@@ -10,3 +10,10 @@ kubectl get hpa -w
 kubectl get pods -w
 
 kubectl get pods -n kube-system | grep metrics
+
+minikube addons enable metrics-server
+minikube addons list | grep metrics
+minikube kubectl -- get pods -n kube-system
+
+
+
