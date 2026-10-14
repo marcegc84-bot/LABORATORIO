@@ -8,3 +8,5 @@ done
 kubectl get hpa -w
 
 kubectl get pods -w
+
+kubectl get pods -n kube-system | grep metrics
